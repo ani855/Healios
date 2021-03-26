@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0cx-TQ-tyc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qyb-9G-qgy">
+            <objects>
+                <navigationController id="0cx-TQ-tyc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ZN6-oI-6IG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HXG-Me-S4T" kind="relationship" relationship="rootViewController" id="DHn-Cb-kYU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4m-E5-Krc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-939" y="-212"/>
+        </scene>
+        <!--Posts View Controller-->
+        <scene sceneID="Io4-Ql-AgW">
+            <objects>
+                <viewController id="HXG-Me-S4T" customClass="PostsViewController" customModule="HealiosTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qha-HQ-CmN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zfs-hx-3Yr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gQ5-qO-IaJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zfs-hx-3Yr" firstAttribute="top" secondItem="gQ5-qO-IaJ" secondAttribute="top" id="0y3-i5-Qxd"/>
+                            <constraint firstItem="zfs-hx-3Yr" firstAttribute="trailing" secondItem="gQ5-qO-IaJ" secondAttribute="trailing" id="gO7-dM-XDq"/>
+                            <constraint firstItem="zfs-hx-3Yr" firstAttribute="leading" secondItem="gQ5-qO-IaJ" secondAttribute="leading" id="pVS-KJ-Vlb"/>
+                            <constraint firstItem="zfs-hx-3Yr" firstAttribute="bottom" secondItem="gQ5-qO-IaJ" secondAttribute="bottom" id="zRP-i9-I2r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="T8a-xm-dO2"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="zfs-hx-3Yr" id="FRy-mR-l9i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wn-d5-MET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-62.318840579710148" y="-212.27678571428569"/>
+        </scene>
+        <!--Post Detail View Controller-->
+        <scene sceneID="Ltk-Kj-WqV">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailViewController" id="PyY-dc-gwY" customClass="PostDetailViewController" customModule="HealiosTestApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EbP-nC-VIx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbG-W0-3eU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QuV-TT-ymW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PbG-W0-3eU" firstAttribute="top" secondItem="QuV-TT-ymW" secondAttribute="top" id="1Fc-xg-8RO"/>
+                            <constraint firstItem="PbG-W0-3eU" firstAttribute="leading" secondItem="QuV-TT-ymW" secondAttribute="leading" id="DRz-1M-IT8"/>
+                            <constraint firstItem="PbG-W0-3eU" firstAttribute="bottom" secondItem="QuV-TT-ymW" secondAttribute="bottom" id="INk-mv-JVh"/>
+                            <constraint firstItem="PbG-W0-3eU" firstAttribute="trailing" secondItem="QuV-TT-ymW" secondAttribute="trailing" id="bn7-p9-luX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="postDetailTableView" destination="PbG-W0-3eU" id="Xay-Cp-0ON"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcc-6N-n7D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.91304347826087" y="-210.26785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

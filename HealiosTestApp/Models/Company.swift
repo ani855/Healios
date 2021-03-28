@@ -8,7 +8,13 @@
 import Foundation
 
 struct Company {
-    let name, catchPhrase, bs: String
+    let name, catchPhrase, bs: String?
+    
+    init(name: String? = "", catchPhrase: String? = "", bs: String? = "") {
+        self.name = name
+        self.catchPhrase = catchPhrase
+        self.bs = bs
+    }
 }
 
 extension Company: Decodable {

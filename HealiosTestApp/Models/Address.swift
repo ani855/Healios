@@ -8,8 +8,16 @@
 import Foundation
 
 struct Address {
-    let street, suite, city, zipcode: String
-    let geoLocation: GeoLocation
+    let street, suite, city, zipcode: String?
+    let geoLocation: GeoLocation?
+    
+    init(street: String? = "", suite: String? = "", zipcode: String? = "", city: String? = "", geoLocation: GeoLocation? = GeoLocation()) {
+        self.street = street
+        self.suite = suite
+        self.zipcode = zipcode
+        self.city = city
+        self.geoLocation = geoLocation
+    }
 }
 
 extension Address: Decodable {

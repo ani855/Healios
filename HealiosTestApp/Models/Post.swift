@@ -8,8 +8,15 @@
 import Foundation
 
 struct Post {
-    let id, userId: Int
-    let title, body: String
+    var id, userId: Int16
+    var title, body: String?
+    
+    init(id: Int16, userId: Int16, title: String? = "", body: String? = "") {
+        self.id = id
+        self.userId = userId
+        self.title = title
+        self.body = body
+    }
 }
 
 extension Post: Decodable {
@@ -23,8 +30,8 @@ extension Post: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Codingkeys.self)
-        id = try container.decode(Int.self, forKey: .id)
-        userId = try container.decode(Int.self, forKey: .userId)
+        id = try container.decode(Int16.self, forKey: .id)
+        userId = try container.decode(Int16.self, forKey: .userId)
         title = try container.decode(String.self, forKey: .title)
         body = try container.decode(String.self, forKey: .body)
     }

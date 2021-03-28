@@ -40,6 +40,7 @@
 		2CB591A2260E680C00CA76CB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AB974260CBDDF00F5A56F /* NetworkManager.swift */; };
 		2CB591A6260E681C00CA76CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AB96D260CB63700F5A56F /* API.swift */; };
 		2CB591AA260E683700CA76CB /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C330E6B260B367000EA8C7B /* PostDetailViewModel.swift */; };
+		2CD39EBE260E8C9B0004C47D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD39EBD260E8C9B0004C47D /* CoreDataStack.swift */; };
 		2CE2BE5D2609FB29007D511E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2BE5C2609FB29007D511E /* AppDelegate.swift */; };
 		2CE2BE5F2609FB29007D511E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2BE5E2609FB29007D511E /* SceneDelegate.swift */; };
 		2CE2BE612609FB29007D511E /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2BE602609FB29007D511E /* PostsViewController.swift */; };
@@ -111,6 +112,7 @@
 		2CB590FE260DEF4300CA76CB /* PostDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailHeaderView.xib; sourceTree = "<group>"; };
 		2CB59109260DF8FB00CA76CB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		2CB59131260E5E4200CA76CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CD39EBD260E8C9B0004C47D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		2CE2BE592609FB29007D511E /* HealiosTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealiosTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE2BE5C2609FB29007D511E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CE2BE5E2609FB29007D511E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		2C330E8B260B3A5600EA8C7B /* HelpersClasses */ = {
 			isa = PBXGroup;
 			children = (
+				2CD39EBC260E8C7E0004C47D /* CoreData */,
 				2CB590ED260DD8F100CA76CB /* TableView */,
 			);
 			path = HelpersClasses;
@@ -197,6 +200,14 @@
 				2C9AB90D260BDFB000F5A56F /* TableViewDelegate.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		2CD39EBC260E8C7E0004C47D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2CD39EBD260E8C9B0004C47D /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		2CE2BE502609FB29007D511E = {
@@ -613,6 +624,7 @@
 				2CE2BE5F2609FB29007D511E /* SceneDelegate.swift in Sources */,
 				2C77E73E260DD64B006A821D /* PostDetailHeaderView.swift in Sources */,
 				2CE2BEAF2609FF94007D511E /* User.swift in Sources */,
+				2CD39EBE260E8C9B0004C47D /* CoreDataStack.swift in Sources */,
 				2CE2BF02260A21D4007D511E /* TableViewDataSource.swift in Sources */,
 				2C330E82260B36FE00EA8C7B /* CommentTableViewCell.swift in Sources */,
 				2C9AB96E260CB63700F5A56F /* API.swift in Sources */,

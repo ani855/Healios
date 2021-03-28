@@ -8,8 +8,16 @@
 import Foundation
 
 struct Comment {
-    let id, postId: Int
-    let name, email, body: String
+    let id, postId: Int16
+    let name, email, body: String?
+    
+    init(id: Int16, postId: Int16, name: String? = "", email: String? = "", body: String? = "") {
+        self.id = id
+        self.postId = postId
+        self.name = name
+        self.email = email
+        self.body = body
+    }
 }
 
 extension Comment: Decodable {
@@ -24,9 +32,9 @@ extension Comment: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        id = try container.decode(Int.self, forKey: .id)
+        id = try container.decode(Int16.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        postId = try container.decode(Int.self, forKey: .postId)
+        postId = try container.decode(Int16.self, forKey: .postId)
         email = try container.decode(String.self, forKey: .email)
         body = try container.decode(String.self, forKey: .body)
     }

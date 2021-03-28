@@ -37,41 +37,40 @@ class PostsViewController: UIViewController {
     
     func updateUIByViewModel() {
         viewModel = PostsViewModel()
-        viewModel.bindPostsViewModelToController = { error in
-            guard error == nil else {
+        viewModel.getPostsData { (posts, error) in
+            if error != nil {
                 self.presentAlert(withTitle: "Server Error", message: error?.localizedDescription ?? "Something went wrong")
                 self.activityIndicator?.stopAnimating()
                 return
+            }else{
+                self.updateDataSource()
             }
-            self.updateDataSource()
         }
     }
     
     func updateDataSource() {
         self.delegate = TableViewDelegate()
-        if let _ = self.viewModel.posts {
-            self.dataSource = TableViewDataSource(cellIdentifier: "PostTableViewCell", items: self.viewModel.posts!, configureCell: { (cell, post) in
-                cell.titleLabel.text = post.title
-                cell.bodyLabel.text = post.body
-            })
+        self.dataSource = TableViewDataSource(cellIdentifier: "PostTableViewCell", items: self.viewModel.posts, configureCell: { (cell, post) in
+            cell.titleLabel.text = post.title
+            cell.bodyLabel.text = post.body
+        })
 
-            DispatchQueue.main.async {
-                let nib = UINib(nibName: "PostTableViewCell",bundle: nil)
-                self.postsTableView.register(nib, forCellReuseIdentifier: "PostTableViewCell")
-                self.postsTableView.dataSource = self.dataSource
-                self.postsTableView.delegate = self.delegate
-                self.delegate.cellSelectedInIndexPath = { (index) -> () in
-                    self.openDetailPageBy(index: index)
-                }
-                self.postsTableView.reloadData()
-                self.activityIndicator?.stopAnimating()
+        DispatchQueue.main.async {
+            let nib = UINib(nibName: "PostTableViewCell",bundle: nil)
+            self.postsTableView.register(nib, forCellReuseIdentifier: "PostTableViewCell")
+            self.postsTableView.dataSource = self.dataSource
+            self.postsTableView.delegate = self.delegate
+            self.delegate.cellSelectedInIndexPath = { (index) -> () in
+                self.openDetailPageBy(index: index)
             }
+            self.postsTableView.reloadData()
+            self.activityIndicator?.stopAnimating()
         }
     }
     
     func openDetailPageBy(index: Int) {
         
-        let postDetailviewModel: PostDetailViewModel = PostDetailViewModel(post: self.viewModel.posts![index])
+        let postDetailviewModel: PostDetailViewModel = PostDetailViewModel(post: self.viewModel.posts[index])
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let postDetailViewController: PostDetailViewController = storyboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController 
         

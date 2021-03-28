@@ -8,7 +8,12 @@
 import Foundation
 
 struct GeoLocation {
-    let latitude, longitude: String
+    var latitude, longitude: String?
+    
+    init(lat: String? = "", lon: String? = "") {
+        self.latitude = lat
+        self.latitude = lon
+    }
 }
 
 extension GeoLocation: Decodable {

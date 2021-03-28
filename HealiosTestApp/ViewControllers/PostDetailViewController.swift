@@ -45,13 +45,15 @@ class PostDetailViewController: UIViewController {
     }
     
     func updateUIByViewModel() {
-        viewModel.bindPostsDetailViewModelToController = { error in
-            guard error == nil else {
+        
+        viewModel.getPostDetail { (users, commments, error) in
+            if error != nil {
                 self.presentAlert(withTitle: "Server Error", message: error?.localizedDescription ?? "Something went wrong")
                 self.activityIndicator?.stopAnimating()
                 return
+            }else{
+                self.updateDataSource()
             }
-            self.updateDataSource()
         }
     }
     
